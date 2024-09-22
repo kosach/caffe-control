@@ -1,0 +1,5 @@
+{
+    "name": "posterApi",
+    "value": "https://joinposter.com/api/",
+    "from_secret": false
+}

@@ -1,0 +1,40 @@
+[
+    {
+        "name": "getSummeryByDay",
+        "private": false,
+        "run_as_user_id_script_source": "exports = function({ query }) {\n  const authToken = query['auth-token'];\n  if(authToken !== context.values.get(\"apiAuthKey\")){\n    console.log('Wrong token', authToken);\n    return '648725089edf9286a5e92d51sada';\n  }\n  console.log('Correct token')\n  return \"648725089edf9286a5e92d51\"; \n};",
+        "disable_arg_logs": true
+    },
+    {
+        "name": "poster_hooks",
+        "private": false,
+        "run_as_user_id_script_source": "exports = function({ query }) {\n  const authToken = query['auth-token'];\n  if(authToken !== context.values.get(\"posterHookApiKey\")){\n    console.log('Wrong token', authToken);\n    return '648725089edf9286a5e92d51sada';\n  }\n  console.log('Correct token')\n  return \"648725089edf9286a5e92d51\"; \n};"
+    },
+    {
+        "name": "getSalaryByDate",
+        "private": false,
+        "run_as_user_id_script_source": "exports = function({ query }) {\n  const authToken = query['auth-token'];\n  if(authToken !== context.values.get(\"apiAuthKey\")){\n    console.log('Wrong token', authToken);\n    return '648725089edf9286a5e92d51sada';\n  }\n  console.log('Correct token')\n  return \"648725089edf9286a5e92d51\"; \n};",
+        "disable_arg_logs": true
+    },
+    {
+        "name": "saveTransactionById",
+        "private": false,
+        "run_as_system": true,
+        "disable_arg_logs": true
+    },
+    {
+        "name": "getAllTransactions",
+        "private": false,
+        "run_as_user_id_script_source": "exports = function({ query }) {\n  const authToken = query['auth-token'];\n  if(authToken !== context.values.get(\"apiAuthKey\")){\n    console.log('Wrong token', authToken);\n    return '648725089edf9286a5e92d51sada';\n  }\n  console.log('Correct token')\n  return \"648725089edf9286a5e92d51\"; \n};"
+    },
+    {
+        "name": "getProductsAndIngradients",
+        "private": false,
+        "run_as_user_id_script_source": "exports = function({ query }) {\n  const authToken = query['auth-token'];\n  if(authToken !== context.values.get(\"apiAuthKey\")){\n    console.log('Wrong token', authToken);\n    return '648725089edf9286a5e92d51sada';\n  }\n  console.log('Correct token')\n  return \"648725089edf9286a5e92d51\"; \n};"
+    },
+    {
+        "name": "createWastes",
+        "private": false,
+        "run_as_user_id_script_source": "exports = function({ query }) {\n  const authToken = query['auth-token'];\n  if(authToken !== context.values.get(\"apiAuthKey\")){\n    console.log('Wrong token', authToken);\n    return '648725089edf9286a5e92d51sada';\n  }\n  console.log('Correct token')\n  return \"648725089edf9286a5e92d51\"; \n};"
+    }
+]

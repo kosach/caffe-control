@@ -1,0 +1,5 @@
+{
+    "name": "posterHookApiKey",
+    "value": "posterHookApiKeyValue",
+    "from_secret": true
+}

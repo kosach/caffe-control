@@ -1,0 +1,15 @@
+{
+    "api-key": {
+        "name": "api-key",
+        "type": "api-key",
+        "disabled": false
+    },
+    "custom-function": {
+        "name": "custom-function",
+        "type": "custom-function",
+        "config": {
+            "authFunctionName": "poster_hooks"
+        },
+        "disabled": false
+    }
+}

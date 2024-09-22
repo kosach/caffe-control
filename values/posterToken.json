@@ -1,0 +1,5 @@
+{
+    "name": "posterToken",
+    "value": "posterKeyValue",
+    "from_secret": true
+}
