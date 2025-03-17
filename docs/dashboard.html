@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - CafeLAutomation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .navbar {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar h1 {
+            font-size: 18px;
+            margin: 0;
+        }
+        .menu {
+            display: flex;
+            gap: 15px;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        .widget {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .widget h3 {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        .widget p {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <h1>Manager Dashboard</h1>
+        <div class="menu">
+            <a href="transactions.html">Transactions</a>
+            <a href="writeoff.html">Write-Offs</a>
+            <a href="reports.html">Reports</a>
+            <a href="usermanagement.html">Users</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Dashboard Overview</h2>
+        <div class="dashboard-grid">
+            <div class="widget">
+                <h3>Sales Today</h3>
+                <p>$3,200</p>
+            </div>
+            <div class="widget">
+                <h3>Active Orders</h3>
+                <p>12</p>
+            </div>
+            <div class="widget">
+                <h3>Inventory Status</h3>
+                <p>4 items low</p>
+            </div>
+            <div class="widget">
+                <h3>System Alerts</h3>
+                <p>1 critical issue</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
