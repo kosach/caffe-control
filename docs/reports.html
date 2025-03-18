@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CafeLAutomation – Reports</title>
+  <!-- Link to external CSS file or include a <style> (shown later) -->
+  <link rel="stylesheet" href="reports.css" />
+  <!-- Chart.js library for charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Filters Section: Date range and Report type -->
+  <div class="filter-bar">
+    <div class="date-filters">
+      <label for="startDate">From:</label>
+      <input type="date" id="startDate" name="startDate">
+      <label for="endDate">To:</label>
+      <input type="date" id="endDate" name="endDate">
+    </div>
+    <div class="type-filter">
+      <label for="reportType">Report:</label>
+      <select id="reportType">
+        <option value="Sales">Sales</option>
+        <option value="Inventory">Inventory</option>
+        <option value="Performance">Performance</option>
+      </select>
+    </div>
+    <div class="export-buttons">
+      <button id="csvBtn">Export CSV</button>
+      <button id="pdfBtn">Export PDF</button>
+    </div>
+  </div>
+
+  <!-- Charts Section: Bar and Line charts for trends -->
+  <div class="charts-container">
+    <canvas id="salesChartCanvas"></canvas>
+    <canvas id="inventoryChartCanvas"></canvas>
+    <canvas id="perfChartCanvas"></canvas>
+  </div>
+
+  <!-- Table Section: Sales and Inventory Reports Table -->
+  <div class="table-container">
+    <table id="reportTable" class="report-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Sales Revenue</th>
+          <th>Number of Transactions</th>
+          <th>Inventory Used</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Example rows (in a real app, generated dynamically) -->
+        <tr>
+          <td>2025-03-15</td>
+          <td>$1,250</td>
+          <td>45</td>
+          <td>30 units</td>
+        </tr>
+        <tr>
+          <td>2025-03-16</td>
+          <td>$1,430</td>
+          <td>50</td>
+          <td>28 units</td>
+        </tr>
+        <!-- ...more rows... -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Include the JavaScript for interactivity (charts, filters, export) -->
+  <script src="reports.js"></script>
+</body>
+</html>
