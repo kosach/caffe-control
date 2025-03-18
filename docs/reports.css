@@ -6,7 +6,34 @@ body {
   margin: 0;
   padding: 1rem;
 }
+.navbar {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.navbar h1 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.menu {
+  display: flex;
+  gap: 15px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
 /* Filter bar layout */
 .filter-bar {
   display: flex;

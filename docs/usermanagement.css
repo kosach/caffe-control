@@ -1,0 +1,255 @@
+/* Base styling */
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  /* light grey page background */
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+.navbar {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h1 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.menu {
+  display: flex;
+  gap: 15px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+.user-management-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/* Toolbar (search, filter, add button) */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.search-filter {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.search-filter input[type="text"],
+.search-filter select {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+}
+
+.btn {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.btn-add {
+  background-color: #4CAF50;
+  /* green add button */
+  color: #fff;
+}
+
+.btn-edit {
+  background-color: #3498DB;
+  /* blue edit button */
+  color: #fff;
+  margin-right: 5px;
+}
+
+.btn-delete {
+  background-color: #E74C3C;
+  /* red delete button */
+  color: #fff;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* Users table */
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.users-table th,
+.users-table td {
+  text-align: left;
+  padding: 8px;
+}
+
+.users-table th {
+  background: #f0f0f0;
+}
+
+.users-table tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* Actions column center alignment */
+.users-table td:last-child {
+  text-align: center;
+}
+
+/* Modal overlay and content */
+.modal {
+  display: none;
+  /* hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* semi-transparent overlay */
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.modal h2 {
+  margin-top: 0;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 3px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 6px;
+  box-sizing: border-box;
+}
+
+.permissions-section {
+  margin: 15px 0;
+  padding: 10px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+}
+
+.permissions-section label {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.modal-actions {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.btn-save {
+  background-color: #4CAF50;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.btn-cancel {
+  background-color: #ccc;
+}
+
+.btn-cancel:hover {
+  opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .toolbar .search-filter {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .users-table,
+  .users-table thead,
+  .users-table tbody,
+  .users-table th,
+  .users-table td,
+  .users-table tr {
+    display: block;
+  }
+
+  .users-table tr {
+    margin-bottom: 15px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+
+  .users-table tr:nth-child(even) {
+    background: #fff;
+    /* disable striping in mobile view */
+  }
+
+  .users-table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+  }
+
+  .users-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+  }
+
+  .users-table th {
+    display: none;
+    /* hide header in mobile view (labels shown via ::before on td) */
+  }
+}
