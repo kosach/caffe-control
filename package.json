@@ -1,0 +1,15 @@
+{
+  "name": "caffe-control",
+  "version": "1.0.0",
+  "description": "This tutorial shows you how to use the `atlas deployments` command to create a local Atlas deployment for the CafeLAutomation project. In this tutorial, we will deploy a single-node replica set on your local computer to support CafeLAutomation operations. You can then manage your deployment and use Atlas Search and Atlas Vector Search to support the analytics and data-driven operations of CafeLAutomation.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
