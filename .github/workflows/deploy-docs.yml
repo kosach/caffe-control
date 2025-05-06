@@ -1,4 +1,4 @@
-name: Build and Deploy UI/
+name: Build and Deploy UI to docs/
 
 on:
   push:
@@ -25,4 +25,4 @@ jobs:
         git config user.email "actions@github.com"
         git add docs/
         git commit -m "🔄 Auto-update docs from ui/ folder" || echo "No changes to commit"
-        git push origin main
+        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:main
