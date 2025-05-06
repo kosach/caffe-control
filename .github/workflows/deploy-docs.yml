@@ -1,0 +1,28 @@
+name: Build and Deploy UI/
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Copy UI files to docs/
+      run: |
+        rm -rf docs
+        mkdir docs
+        cp -r ui/* docs/
+
+    - name: Commit and push changes to docs/
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add docs/
+        git commit -m "🔄 Auto-update docs from ui/ folder" || echo "No changes to commit"
+        git push origin main
