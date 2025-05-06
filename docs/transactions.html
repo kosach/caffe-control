@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions - CafeLAutomation</title>
+    <style>
+        /* Base styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar h1 {
+            font-size: 18px;
+            margin: 0;
+        }
+        .menu {
+            display: flex;
+            gap: 15px;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* Page Container */
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Toolbar */
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        input, select, button {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .btn-primary {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-secondary {
+            background: #ddd;
+            color: black;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Transactions Table */
+        .transactions-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .transactions-table th, .transactions-table td {
+            text-align: left;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .transactions-table th {
+            background: #f2f2f2;
+        }
+        .transactions-table tbody tr:hover {
+            background: #f9f9f9;
+        }
+
+        /* Status Badges */
+        .status {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: white;
+        }
+        .status.completed { background: #28a745; }
+        .status.pending { background: #ffc107; color: black; }
+        .status.failed { background: #dc3545; }
+
+        /* Add Transaction Form */
+        .add-transaction-form {
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        label {
+            font-size: 14px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .toolbar {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .filters {
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>Transactions</h1>
+        <div class="menu">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="transactions.html">Transactions</a>
+            <a href="writeoff.html">Write-Offs</a>
+            <a href="reports.html">Reports</a>
+            <a href="usermanagement.html">Users</a>
+        </div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="container">
+        <h2>Transactions</h2>
+
+        <!-- Toolbar -->
+        <div class="toolbar">
+            <div class="filters">
+                <input type="text" id="search" placeholder="Search transactions...">
+                <label for="start-date">From:</label>
+                <input type="date" id="start-date">
+                <label for="end-date">To:</label>
+                <input type="date" id="end-date">
+                <select id="status-filter">
+                    <option value="">All Statuses</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Failed">Failed</option>
+                </select>
+                <button class="btn-secondary">Apply Filters</button>
+            </div>
+            <button class="btn-primary">+ Add Transaction</button>
+        </div>
+
+        <!-- Transactions Table -->
+        <table class="transactions-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2025-03-01</td>
+                    <td>$45.00</td>
+                    <td><span class="status completed">Completed</span></td>
+                </tr>
+                <tr>
+                    <td>2025-03-05</td>
+                    <td>$120.50</td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td>2025-03-10</td>
+                    <td>$75.00</td>
+                    <td><span class="status failed">Failed</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Add New Transaction Form -->
+        <div class="add-transaction-form">
+            <h3>Add New Transaction</h3>
+            <form>
+                <div class="form-group">
+                    <label for="new-date">Date:</label>
+                    <input type="date" id="new-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="new-amount">Amount:</label>
+                    <input type="number" id="new-amount" step="0.01" placeholder="$0.00" required>
+                </div>
+                <div class="form-group">
+                    <label for="new-method">Payment Method:</label>
+                    <input type="text" id="new-method" placeholder="e.g. Cash or Credit Card" required>
+                </div>
+                <div class="form-group">
+                    <label for="new-status">Status:</label>
+                    <select id="new-status" required>
+                        <option value="Completed">Completed</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Failed">Failed</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">Add Transaction</button>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>
